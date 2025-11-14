@@ -1,0 +1,70 @@
+/* index.css - Estilos de amorporlasplantas */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f3f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #4CAF50;
+}
+
+.navbar-brand,
+.nav-link {
+  color: rgb(255, 255, 255) !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Productos */
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Formularios */
+form input, form textarea {
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
+}

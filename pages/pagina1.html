@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos |Amor por las plantas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">Amor por las plantas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina1.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina2.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina5.html">Contacto</a></li>
+          <li class="nav-item">
+            <button class="btn btn-light position-relative" onclick="mostrarCarrito()">
+              🛒 Carrito
+              <span id="contadorCarrito" class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Catálogo -->
+  <section class="container py-5">
+    <h1 class="text-center mb-4">Catálogo de Productos</h1>
+    <div class="row g-4">
+
+      <!-- Producto 1 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/maseta.webp" class="card-img-top" alt="Maceta Cerámica">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maceta Cerámica</h5>
+            <p class="card-text">$5000</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Maceta Cerámica', 4200)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/cactus.webp" class="card-img-top" alt="Cactus San Pedro">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cactus San Pedro</h5>
+            <p class="card-text">$2700</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Cactus San Pedro', 2700)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/bonsai.webp" class="card-img-top" alt="Bonsai Ficus">
+          <div class="card-body text-center">
+            <h5 class="card-title">Bonsai Ficus</h5>
+            <p class="card-text">$9.500</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Bonsai Ficus', 9500)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/jade.webp" class="card-img-top" alt="Suculenta Jade">
+          <div class="card-body text-center">
+            <h5 class="card-title">Suculenta Jade</h5>
+            <p class="card-text">$3500</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Suculenta Jade', 3500)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/maceta.webp" class="card-img-top" alt="Maceta Colgante Artesanal">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maceta Colgante Artesanal</h5>
+            <p class="card-text">$5200</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Maceta Colgante Artesanal', 5200)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/kit.webp" class="card-img-top" alt="Kit Mini Huerta">
+          <div class="card-body text-center">
+            <h5 class="card-title">Kit Mini Huerta</h5>
+            <p class="card-text">$6800</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Kit Mini Huerta', 6800)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+ 
+
+  <!-- Navegación entre páginas -->
+  <div class="container text-center my-5">
+    <div class="d-inline-flex gap-2">
+   
+      <a href="/pages/pagina1.html" class="btn btn-success rounded-circle fw-bold">1</a>
+      <a href="/pages/pagina3.html" class="btn btn-outline-success rounded-circle fw-bold">2</a>
+      <a href="/pages/pagina4.html" class="btn btn-outline-success rounded-circle fw-bold">3</a>
+      <a href="/pages/pagina3.html" class="btn btn-outline-success rounded-circle fw-bold">➡</a>
+    </div>
+  </div>
+
+<!-- ... (footer, scripts, etc.) ... -->
+
+  <!-- Modal del carrito -->
+  <div class="modal fade" id="modalCarrito" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🛒 Tu Carrito</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="listaCarrito" class="list-group mb-3"></ul>
+          <h5 class="text-end mt-3">Total: $<span id="totalCarrito">0</span></h5>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar Carrito</button>
+          <button class="btn btn-success" onclick="comprar()">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p>&copy; 2025 Amor por las plantas. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Más Productos | Amor por las plantas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html"> Amor por las plantas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina1.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina2.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/pagina5.html">Contacto</a></li>
+          
+          <li class="nav-item">
+            <button class="btn btn-light position-relative" onclick="mostrarCarrito()">
+              🛒 Carrito
+              <span id="contadorCarrito" class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Catálogo -->
+  <section class="container py-5">
+    <h1 class="text-center mb-4">Más Productos Verdes 🌿</h1>
+    <div class="row g-4">
+
+      <!-- Producto 1 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/nose3.jpg" class="card-img-top" alt="Helecho Boston">
+          <div class="card-body text-center">
+            <h5 class="card-title">Helecho Boston</h5>
+            <p class="card-text">$3900</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Helecho Boston', 3900)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/nose2.jpg" class="card-img-top" alt="Monstera Deliciosa">
+          <div class="card-body text-center">
+            <h5 class="card-title">Monstera Deliciosa</h5>
+            <p class="card-text">$8900</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Monstera Deliciosa', 8900)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/nose3.jpg" class="card-img-top" alt="Palmera Areca">
+          <div class="card-body text-center">
+            <h5 class="card-title">Palmera Areca</h5>
+            <p class="card-text">$10500</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Palmera Areca', 10500)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/maceta de barro.jpg" class="card-img-top" alt="Maceta Terracota XL">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maceta Terracota XL</h5>
+            <p class="card-text">$7500</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Maceta Terracota XL', 7500)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/maceta de ceramica.jpg" class="card-img-top" alt="Maceta Minimalista Blanca">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maceta Minimalista Blanca</h5>
+            <p class="card-text">$4800</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Maceta Minimalista Blanca', 4800)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="col-md-4">
+        <div class="card product-card shadow">
+          <img src="/assets/aloe vera.jpg" class="card-img-top" alt="Aloe Vera">
+          <div class="card-body text-center">
+            <h5 class="card-title">Aloe Vera</h5>
+            <p class="card-text">$4100</p>
+            <button class="btn btn-success" onclick="agregarCarrito('Aloe Vera', 4100)">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  
+
+  <!-- Navegación entre páginas -->
+  <div class="container text-center my-5">
+    <div class="d-inline-flex gap-2">
+      <a href="/pages/pagina1.html" class="btn btn-outline-success rounded-circle fw-bold">⬅</a>
+      <a href="/pages/pagina1.html" class="btn btn-outline-success rounded-circle fw-bold">1</a>
+      <a href="/pages/pagina3.html" class="btn btn-success rounded-circle fw-bold">2</a>
+      <a href="/pages/pagina4.html" class="btn btn-outline-success rounded-circle fw-bold">3</a>
+      <a href="/pages/pagina4.html" class="btn btn-outline-success rounded-circle fw-bold">➡</a>
+    </div>
+  </div>
+
+<!-- ... (footer, scripts, etc.) ... -->
+
+  <!-- Modal del carrito -->
+  <div class="modal fade" id="modalCarrito" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🛒 Tu Carrito</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="listaCarrito" class="list-group mb-3"></ul>
+          <h5 class="text-end mt-3">Total: $<span id="totalCarrito">0</span></h5>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar Carrito</button>
+          <button class="btn btn-success" onclick="comprar()">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p>&copy; 2025 Amor por las plantas. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
