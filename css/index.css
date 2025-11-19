@@ -9,7 +9,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #4CAF50;
+  background-color: #f2f3f8;
 }
 
 .navbar-brand,
@@ -68,3 +68,4 @@ form input:focus, form textarea:focus {
   border-color: #2e7d32;
   box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
 }
+
